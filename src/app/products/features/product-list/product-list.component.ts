@@ -9,10 +9,4 @@ import { ProductsService } from '../../data-access/products.service';
   styles: ``,
   providers: [ProductsService],
 })
-export default class ProductListComponent {
-  constructor(private productService: ProductsService) {
-    this.productService.getProducts().subscribe((products) => {
-      console.log({ products });
-    });
-  }
-}
+export default class ProductListComponent {}
