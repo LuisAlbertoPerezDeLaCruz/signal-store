@@ -1,4 +1,5 @@
 {{ productState.state.status() }}
-@for(product of productState.state().products; track product){
-<p>{{ product.title }}</p>
+
+@for (product of productState.state().products; track product) {
+  <app-product-card />
 }
