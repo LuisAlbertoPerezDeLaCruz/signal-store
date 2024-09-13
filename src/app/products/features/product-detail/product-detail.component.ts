@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
   imports: [],
   templateUrl: './product-detail.component.html',
-  styles: ``
+  styles: ``,
 })
-export class ProductDetailComponent {
-
+export default class ProductDetailComponent implements OnInit {
+  ngOnInit(): void {
+    console.log('*************** entre aqui *****************');
+  }
 }
