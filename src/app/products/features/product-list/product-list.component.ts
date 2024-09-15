@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ProductsStateService } from '../../data-access/products-state.service';
 import { ProductCardComponent } from '../../ui/product-card/product-card.component';
 import { CartStateService } from '../../../shared/data-access/cart-state.service';
+import { Product } from '../../../shared/interfaces/product.interface';
 
 @Component({
   selector: 'app-product-list',
@@ -18,5 +19,7 @@ export default class ProductListComponent {
     const page = this.productState.state.page() + 1;
     this.productState.changePage$.next(page);
   }
-  constructor() {}
+  addToCart(product: Product) {
+    console.log({ product });
+  }
 }
