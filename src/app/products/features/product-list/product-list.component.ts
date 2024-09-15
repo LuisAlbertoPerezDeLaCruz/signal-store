@@ -21,5 +21,6 @@ export default class ProductListComponent {
   }
   addToCart(product: Product) {
     console.log({ product });
+    this.cartState.add({ product, quantity: 1 });
   }
 }
