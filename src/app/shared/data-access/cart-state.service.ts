@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { effect, inject, Injectable } from '@angular/core';
 import { signalSlice } from 'ngxtension/signal-slice';
 import { StorageService } from './storage.service';
 import { map } from 'rxjs';
@@ -13,6 +13,14 @@ interface State {
   providedIn: 'root',
 })
 export class CartStateService {
+  constructor() {
+    effect(() => {
+      if (this.state.loaded() === true) {
+        console.log(this.state.products());
+      }
+    });
+  }
+
   private storageService = inject(StorageService);
 
   private initialState: State = {
